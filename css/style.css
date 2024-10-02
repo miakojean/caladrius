@@ -144,6 +144,9 @@ nav {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
+.nav__log{
+  display: none;
+}
 .nav__links.open {
   transform: scaleY(1);
 }
@@ -171,11 +174,6 @@ nav {
   font-size: 1.5rem;
   color: var(--text-dark);
   cursor: pointer;
-}
-
-#login, #registration{
-    display: none;
-    list-style: none;
 }
 
 .header__content {
@@ -502,31 +500,31 @@ nav {
     display: none;
   }
 
-    .nav__log{
-        display: flex;
-        gap: 1rem;
-    }
+  .nav__log{
+    display: flex;
+    gap: 1rem;
+  }
 
-    .nav__log .link{
-        list-style: none;
-    }
+  .nav__log .link{
+    list-style: none;
+  }
 
-    .nav__log .link a{
-        color: black;
-        background-color: var(--bice-blue);
-        font-weight: 400;
-        transition: 0.3s;
-        font-weight: 600;
-        background: var(--bice-blue);
-        padding: 12px;
+  .nav__log .link a{
+    color: black;
+    background-color: var(--bice-blue);
+    font-weight: 400;
+    transition: 0.3s;
+    font-weight: 600;
+    background: var(--bice-blue);
+    padding: 12px;
     }
 
     #registration{
-        display: none;
+      display: none;
     }
 
     #login{
-        display: none;
+      display: none;
     }
 
   .header__content {
