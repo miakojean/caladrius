@@ -245,7 +245,7 @@ nav {
 .about__card span {
   padding: 8px 15px;
   font-size: 1.75rem;
-  color: var(--sapphire);
+  color: var(--bice-blue);
   background-color: var(--secondary-color);
   border-radius: 100%;
 }
@@ -302,34 +302,6 @@ nav {
   max-width: 500px;
 }
 
-.client__card {
-  padding: 2rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  background-color: var(--secondary-color);
-}
-
-.client__card img {
-  max-width: 70px;
-  border-radius: 100%;
-}
-
-.client__card h4 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--text-dark);
-}
-
-.client__ratings {
-  color: goldenrod;
-}
-
-.client__card p {
-  margin-top: 1rem;
-  color: var(--text-light);
-}
-
 .news__grid {
   margin-top: 4rem;
   display: grid;
@@ -355,9 +327,14 @@ nav {
 }
 
 .news__card p {
-    color: var(--text-light);
-    font-family: 'inter', sans-serif;
-    line-height: 1.5;
+  color: var(--text-light);
+  font-family: 'inter', sans-serif;
+  line-height: 1.5;
+}
+
+.news__card a{
+  text-decoration: none;
+  color: var(--bice-blue);
 }
 
 .contact {
@@ -401,6 +378,7 @@ nav {
 .footer__col p {
   margin-bottom: 1rem;
   color: var(--text-light);
+  line-height: 1.5;
 }
 
 .footer__col form {
@@ -598,30 +576,33 @@ nav {
 
 @media (width > 1024px) {
 
-    .nav__log{
-        display: flex;
-        gap: 1rem;
-        }
+  .nav__log{
+    display: flex;
+    gap: 1rem;
+  }
     
-        .nav__log .link{
-            list-style: none;
-        }
+  .nav__log .link{
+    list-style: none;
+  }
     
-        .nav__log .link a{
-            color: var(--white);
-            background-color: var(--bice-blue);
-            font-weight: 400;
-            transition: 0.3s;
-            font-weight: 600;
-            background: var(--bice-blue);
-            padding: 12px;
-        }
+  .nav__log .link a{
+    color: var(--white);
+    background-color: var(--bice-blue);
+    font-weight: 400;
+    transition: 0.3s;
+    font-weight: 600;
+    background: var(--bice-blue);
+    padding: 12px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+  }
     
-        #login{
-            background: none;
-            color: var(--sapphire);
-            border: none;
-        }
+  #login{
+    background: none;
+    color: var(--sapphire);
+    border: none;
+  }
     
   .header__image {
     gap: 2rem;
