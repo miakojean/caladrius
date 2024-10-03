@@ -11,7 +11,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="/css/signup.css" />
+    <link rel="stylesheet" href="/css/newsletter.css" />
     <title>CALADRIUS BANK</title>
   </head>
   <body>
@@ -34,56 +34,53 @@
         <span><i class="ri-menu-3-line"></i></span>
       </div>
     </nav>
+    <header class="section__container header__container" id="home">
+      <div class="header__content">
+        <h1>Institution financière en ligne</h1>
+        <div class="header__content__details">
+          <p>
+            Caladrius est une entreprise dédiée à fournir des solutions 
+            innovantes et accessibles dans le domaine des services financiers 
+            numériques. Inspirés par la modernité et la simplicité, nous créons 
+            des expériences bancaires en ligne qui allient efficacité, sécurité
+            et convivialité.</p>
+          <button class="btn"><a href="#form">Abonnement Newsletter</a></button>
+        </div>
+      </div>
+    </header>
 
     <section class="section__container about__container" id="about">
-      <div class="about__header">
-        <div class="about__image">
-          <img src="/assets/DALL·E 2024-10-01 21.20.58 - An African investor reviewing financial documents and charts, sitting confidently in a modern office environment. The investor is dressed in a sharp b.webp" alt="about" />
-        </div>
-        <div class="about__content">
-          <p class="section__subheader">
-            Bienvenu dans notre monde où chaque pas est une avancée
-            vers votre liberté.
-          </p>
-          <h2 class="section__header">Inscription</h2>
-          <form action="#" method="post">
-            <div class="input__family">
-                <div class="input__content">
-                    <label for="username">Nom</label>
-                    <input class="myInput" type="text" name="first_name" id="firstname">
-                </div>
-                <div class="input__content">
-                    <label for="username">Prenoms</label>
-                    <input class="myInput" type="text" name="last_name" id="lastname">
-                </div>
-            </div>
-            <div class="input__family">
-                <div class="input__content">
-                    <label for="username">Nom d'utilisateur</label>
-                    <input class="myInput" type="text" name="username" id="username">
-                </div>
-                <div class="input__content">
-                    <label for="username">Email</label>
-                    <input class="myInput" type="email" name="username" id="username">
-                </div>
-            </div>
-            <div class="input__family">
-                <div class="input__content">
-                    <label for="password">Mot de passe</label>
-                    <input class="myInput" type="password" name="password1" id="password1">
-                </div>
-                <div class="input__content">
-                    <label for="password">Confirmer mot de passe</label>
-                    <input class="myInput" type="password" name="password2" id="password2">
-                </div>
-            </div>
-            <div class="input__content">
-                <button type="submit" class="btn" id="order_1">Connexion</button>
-            </div>
-          </form>
-          <div class="no__account">
-            <p>Déjà un compte? <a href="#">se connecter</a></p>
+        <div class="about__header">
+          <div class="about__image">
+            <img src="/assets/_88ac422d-c896-4a0a-9ff7-ee4f35abc386.jpeg" alt="about" />
           </div>
+          <div class="about__content">
+            <p class="section__subheader">
+                Rester au courant des grandes tendances financières
+                et de nos travaux.
+              </p>
+            <h2 class="section__header">Abonnement newsletter</h2>
+            <form action="#" method="post" id="form">
+              <div class="input__content">
+                  <label for="username">Email</label>
+                  <input class="myInput" type="email" name="email" id="email">
+              </div>
+              <div class="input__content">
+                  <button type="submit" class="btn" id="order_1">Soumettre</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section__container contact__container">
+        <h2 class="section__header">
+          Entrer dans un monde où chaque décision est un pas vers
+          une parfaite gestion financière
+        </h2>
+        <div class="contact__btn">
+          <button class="btn" id="order_2">S'inscrire</button>
         </div>
       </div>
     </section>
@@ -112,7 +109,7 @@
       <div class="footer__col">
         <h4>S'abonner à notre newsletter</h4>
         <form action="/">
-          <input class="myInput" type="text" placeholder="Your Email" />
+          <input type="text" placeholder="Your Email" />
           <button><i class="ri-send-plane-2-fill"></i></button>
         </form>
         <div class="footer__socials">
@@ -131,6 +128,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="/js/signup.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>
