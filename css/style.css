@@ -147,6 +147,7 @@ nav {
 .nav__log{
   display: none;
 }
+
 .nav__links.open {
   transform: scaleY(1);
 }
@@ -168,6 +169,19 @@ nav {
 
 .nav__links.open .link a {
   opacity: 1;
+}
+
+.link__log{
+  background: var(--bice-blue);
+  color: var(--white);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.link__log a{
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
 }
 
 .nav__menu__btn {
@@ -495,15 +509,11 @@ nav {
     font-weight: 600;
     background: var(--bice-blue);
     padding: 12px;
-    }
+  }
 
-    #registration{
-      display: none;
-    }
-
-    #login{
-      display: none;
-    }
+  .link__log{
+    display: none;
+  }
 
   .header__content {
     grid-template-columns: repeat(2, 1fr);
@@ -596,6 +606,10 @@ nav {
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     cursor: pointer;
+  }
+
+  .nav__log .link a:hover {
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.3);
   }
     
   #login{
