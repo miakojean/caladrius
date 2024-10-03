@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="/css/signup.css" />
+    <title>CALADRIUS BANK</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo"><a href="#">CALADRIUS</a></div>
+      <ul class="nav__links" id="nav-links">
+        <li class="link"><a href="#home">Accueil</a></li>
+        <li class="link"><a href="#about">A propos</a></li>
+        <li class="link"><a href="#contact">Services</a></li>
+        <li class="link"><a href="#menus">Blog</a></li>
+        <li class="link__log"><a id="login" href="login.html">Connexion</a></li>
+        <li class="link__log"><a id ="registration" href="registration.html">Inscription</a></li>
+      </ul>
+      <div class="nav__log">
+        <li class="link"><a href="login.html">Connexion</a></li>
+        <li class="link"><a href="registration.html">Inscription</a></li>
+      </div>
+      <div class="nav__menu__btn" id="menu-btn">
+        <span><i class="ri-menu-3-line"></i></span>
+      </div>
+    </nav>
+
+    <section class="section__container about__container" id="about">
+      <div class="about__header">
+        <div class="about__image">
+          <img src="/assets/DALL·E 2024-10-01 21.20.58 - An African investor reviewing financial documents and charts, sitting confidently in a modern office environment. The investor is dressed in a sharp b.webp" alt="about" />
+        </div>
+        <div class="about__content">
+          <p class="section__subheader">
+            Bienvenu dans notre monde où chaque pas est une avancée
+            vers votre liberté.
+          </p>
+          <h2 class="section__header">Inscription</h2>
+          <form action="#" method="post">
+            <div class="input__family">
+                <div class="input__content">
+                    <label for="username">Nom</label>
+                    <input class="myInput" type="text" name="first_name" id="firstname">
+                </div>
+                <div class="input__content">
+                    <label for="username">Prenoms</label>
+                    <input class="myInput" type="text" name="last_name" id="lastname">
+                </div>
+            </div>
+            <div class="input__family">
+                <div class="input__content">
+                    <label for="username">Nom d'utilisateur</label>
+                    <input class="myInput" type="text" name="username" id="username">
+                </div>
+                <div class="input__content">
+                    <label for="username">Email</label>
+                    <input class="myInput" type="email" name="username" id="username">
+                </div>
+            </div>
+            <div class="input__family">
+                <div class="input__content">
+                    <label for="password">Mot de passe</label>
+                    <input class="myInput" type="password" name="password1" id="password1">
+                </div>
+                <div class="input__content">
+                    <label for="password">Confirmer mot de passe</label>
+                    <input class="myInput" type="password" name="password2" id="password2">
+                </div>
+            </div>
+            <div class="input__content">
+                <button type="submit" class="btn" id="order_1">Connexion</button>
+            </div>
+          </form>
+          <div class="no__account">
+            <p>Déjà un compte? <a href="#">se connecter</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="section__container footer__container">
+      <div class="footer__col">
+        <h5><a href="#">CALADRIUS</a></h5>
+      </div>
+      <div class="footer__col">
+        <h4>Nos contact</h4>
+        <p>Rue de l'aménagement, Adjame-paillet, Abidjan</p>
+        <p>+225 0757240274</p>
+        <p>caladriusllc@gmail.com</p>
+      </div>
+      <div class="footer__col">
+        <h4>A propos de nous</h4>
+        <p>
+          Caladrius est une entreprise innovante dédiée
+          à fournir des solutions financières modernes 
+          et accessibles. Nous accompagnons nos clients 
+          avec des services sécurisés et performants pour 
+          optimiser leur épargne, investissement et croissance 
+          économique.
+        </p>
+      </div>
+      <div class="footer__col">
+        <h4>S'abonner à notre newsletter</h4>
+        <form action="/">
+          <input class="myInput" type="text" placeholder="Your Email" />
+          <button><i class="ri-send-plane-2-fill"></i></button>
+        </form>
+        <div class="footer__socials">
+          <h4>Nous suivre</h4>
+          <div>
+            <a href="#"><i class="ri-facebook-box-fill"></i></a>
+            <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="footer__bar">
+      Copyright © 2023 Web Design Mastery. All rights reserved.
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="/js/signup.js"></script>
+  </body>
+</html>
