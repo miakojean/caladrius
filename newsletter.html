@@ -58,9 +58,16 @@
             <p class="section__subheader">
                 Rester au courant des grandes tendances financières
                 et de nos travaux.
-              </p>
+            </p>
             <h2 class="section__header">Abonnement newsletter</h2>
-            <form action="#" method="post" id="form">
+            <div class="message">
+              <p>Souscription réussie, vérifiez dès à présent votre boite mail.</p>
+            </div>
+            <form action="{% url 'subscribe' %}" method="post" id="form">
+              <div class="input__content">
+                  <label for="username">Prenoms</label>
+                  <input class="myInput" type="text" name="name" id="name">
+              </div>
               <div class="input__content">
                   <label for="username">Email</label>
                   <input class="myInput" type="email" name="email" id="email">
@@ -128,6 +135,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="/js/main.js"></script>
+    <script src="/js/newsletter.js"></script>
   </body>
 </html>

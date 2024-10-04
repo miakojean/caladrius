@@ -216,6 +216,18 @@ nav {
   line-height: 1.5;
 }
 
+.message{
+  display: none;
+  border: 1px solid #1e7425;
+  padding: 10px;
+  background: #75e77f;
+  border-radius: 5px;
+}
+
+.message p{
+  text-align: center;
+}
+
 .header__image {
   margin-top: 4rem;
   display: grid;
