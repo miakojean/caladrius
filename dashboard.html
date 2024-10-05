@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+   <html lang="fr">
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | mamanjeanny</title>
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="css/dashboard.css">
+
+      <title>Responsive navbar with expanded menu - Bedimcode</title>
+   </head>
+   <body>
+      <!--=============== NAVBAR ===============-->
+      <nav class="nav">
+         <ul class="nav__list">
+            <li>
+               <a href="#home" class="nav__link active-link">
+                  <i class="ri-home-smile-2-line"></i>
+               </a>
+            </li>
+
+            <li>
+               <a href="#loading" class="nav__link active-link">
+                  <i class="ri-time-line"></i>
+               </a>
+            </li>
+
+            <!-- Expand list -->
+            <li>
+               <button class="nav__expand" id="nav-expand">
+                  <i class="ri-add-line nav__expand-icon" id="nav-expand-icon"></i>
+               </button>
+
+               <ul class="nav__expand-list " id="nav-expand-list">
+                  <li>
+                     <a href="#" class="nav__expand-link">
+                        <i class="ri-shopping-cart-line" id="order__1"></i>
+                        <span>Commander</span>
+                     </a>
+                  </li>
+      
+                  <li>
+                     <a href="#" class="nav__expand-link" id="order__2">
+                        <i class="ri-calendar-check-line"></i>
+                        <span>Reserver</span>
+                     </a>
+                  </li>
+               </ul>
+            </li>
+         
+            <li>
+               <a href="#historic" class="nav__link">
+                  <i class="ri-file-list-3-line"></i>
+               </a>
+            </li>
+
+            <li>
+               <a href="#deliadress" class="nav__link">
+                  <i class="ri-user-settings-line"></i>
+               </a>
+            </li>
+         </ul>
+      </nav>
+
+      <!-- Popup Formulaire de commande -->
+      <div class="popup" id="popupForm">
+        <div class="popup-content">
+            <span class="close" id="closeOrder"><i class="ri-close-fill"></i></span>
+            <h2><i class="ri-shopping-cart-line"></i>
+                Commander
+            </h2>
+            <form>
+              <div class="input__family">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name">
+              </div>
+              <div class="input__family">
+                <label for="tel">Tel:</label>
+                <input type="text" id="tel" name="phone_number">
+              </div>
+            <div class="input__family">
+              <label for="commune">Commune</label>
+              <select id="commune" name="commune" >
+                  <option value="adjamé">adjamé</option>
+                  <option value="Abobo">Abobo</option>
+                  <option value="Cocody">Cocody</option>
+                  <option value="Koumassi">Koumassi</option>
+                  <option value="Treichville">Treichville</option>
+                  <option value="Marcory">Marcory</option>
+              </select>
+            </div>
+            <div class="input__family">
+                <label for="address">Adresse de Livraison:</label>
+                <input type="text" id="address" name="address">
+            </div>
+            <div class="input__family">
+                <label for="quantity">Quantité</label>
+                <input type="number" id="quantity" name="quantity" min="1" class="quantity">
+            </div>
+            <div class="input__family">
+                <label for="quantity">Montant</label>
+                <input type="number" id="total" name="price" value="0" readonly class="price">
+            </div>
+            <div class="input__family">
+                <label for="payment-method">Mode de Paiement:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="livraison">À la livraison</option>
+                    <option value="wave">Wave</option>
+                </select>
+            </div>
+            <div id="serialNumberDiv" class="input__family">
+              <label for="invoice_number">Facture N°</label>
+              <input type="text" id="serialNumber" name="serial_number_order" value="" readonly >
+            </div>
+            <div class="input__family">
+              <button type="submit" class="btn" id="validate"><i class="ri-shopping-cart-line"></i> Commander</button>
+            </div>
+            </form>
+        </div>
+      </div>
+      <!--==================== POPUP POUR COMMANDE ====================-->
+
+      <!-- Popup Formulaire de Reservation -->
+      <div class="popup" id="popupFormreservation">
+        <div class="popup-content">
+            <span class="close" id="closeReservation"><i class="ri-close-fill"></i></span>
+            <h2><i class="ri-calendar-check-line"></i>
+                Reservation
+            </h2>
+            <form method="post">
+              <div class="input__family">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name">
+              </div>
+              <div class="input__family">
+                <label for="tel">Tel:</label>
+                <input type="text" id="tel" name="phone_number">
+              </div>
+            <div class="input__family">
+              <label for="commune">Commune</label>
+              <select id="commune" name="commune" >
+                  <option value="adjamé">adjamé</option>
+                  <option value="Abobo">Abobo</option>
+                  <option value="Cocody">Cocody</option>
+                  <option value="Koumassi">Koumassi</option>
+                  <option value="Treichville">Treichville</option>
+                  <option value="Marcory">Marcory</option>
+              </select>
+            </div>
+            <div class="input__family">
+                <label for="address">Adresse de Livraison:</label>
+                <input type="text" id="address" name="address">
+            </div>
+            <div class="input__family">
+              <label for="Date">Date</label>
+              <input type="date" id="Date" name="date">
+            </div>
+            <div class="input__family">
+                <label for="quantity">Quantité</label>
+                <input type="number" id="quantity" name="quantity" min="1" class="quantity">
+            </div>
+            <div class="input__family">
+                <label for="quantity">Montant</label>
+                <input type="number" id="total" name="price" value="0" readonly class="price">
+            </div>
+            <div class="input__family">
+                <label for="payment-method">Mode de Paiement:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="livraison">À la livraison</option>
+                    <option value="wave">Wave</option>
+                </select>
+            </div>
+                <button type="submit" class="btn" id="validate"><i class="ri-shopping-cart-line"></i> Reserver </button>
+            </form>
+        </div>
+      </div>
+
+      <!--==================== MAIN ====================-->
+        <section class="section__container about__container" id="home">
+          <div class="about__header">
+              <div class="about__content">
+                  <p class="section__subheader">Informations personnelles</p>
+                  <h2 class="section__header">Nous réjoindre</h2>
+                  <div class="order__form">
+                      <div class="input__family">
+                        <div class="input_group">
+                              <label for="Nom">Nom</label>
+                              <span>MIAKO</span>
+                        </div>
+                        <div class="input_group">
+                              <label for="Adresse">Prenoms</i></label>
+                              <span>Jean Yves Arnold</span>
+                        </div>
+                      </div>
+                      <div class="input__family">
+                        <div class="input_group">
+                              <label for="username">username</label>
+                              <span>Arnold</span>
+                          </div>
+                        <div class="input_group">
+                              <label for="Email">Email</label>
+                              <span>miako@gmail.com</span>
+                          </div>
+                      </div>
+                  </div>            
+              </div>      
+            </div>
+      </section>
+
+      <!--==================== MAIN ====================-->
+          <section class="section__container about__container" id="loading">
+            <div class="about__header">
+                <div class="about__content">
+                    <p class="section__subheader">Commandes en cours</p>
+                    <h2 class="section__header">Nous réjoindre</h2>
+                    <div class="order__form">
+                        <div class="input__family">
+                          <label for="tel">Tel:</label>
+                        </div>
+                        <div class="input__family">
+                          <label for="commune">Commune</label>
+                        </div>
+                        <div class="input__family">
+                          <label for="commune">Adresse</label>
+                        </div>
+                        <div class="input__family">
+                          <label for="quantity">Quantité</label>
+                        </div>
+                        <div class="input__family">
+                          <label for="quantity">Montant</label>
+                        </div>
+                        <div class="input__family">
+                          <label for="payment-method">Mode de Paiement:</label>
+                        </div>
+                        <div class="input__family">
+                          <label for="payment-method">Reçu de commande</label>
+                        </div>
+                        <div class="input__family">
+                          <label for="payment-method">Statut</label>
+                        </div>
+                      </div>            
+                </div>      
+              </div>
+        </section>
+
+      <!--==================== MAIN ====================-->
+      <section class="section__container about__container" id="historic">
+        <div class="about__header">
+            <div class="about__content">
+                <p class="section__subheader">Historique de commande</p>
+                <h2 class="section__header">Nous réjoindre</h2>
+                <div class="order__form" id = "history">
+                    <div class="input__family">
+                      <div class="input_group">
+                            <label for="Nom">Nom</label>
+                            <span>MIAKO</span>
+                      </div>
+                      <div class="input_group">
+                            <label for="Adresse">Prenoms</i></label>
+                            <span>Jean Yves Arnold</span>
+                      </div>
+                    </div>
+                    <div class="input__family">
+                      <div class="input_group">
+                            <label for="username">username</label>
+                            <span>Arnold</span>
+                        </div>
+                      <div class="input_group">
+                            <label for="Email">Email</label>
+                            <span>miako@gmail.com</span>
+                        </div>
+                    </div>
+                </div>            
+            </div>      
+          </div>
+    </section>
+
+    <section class="section__container about__container" id="deliadress">
+      <div class="about__header">
+          <div class="about__content">
+              <p class="section__subheader">Informations de livraison</p>
+              <h2 class="section__header">Nous réjoindre</h2>
+              <div class="order__form" id = "history">
+                  <div class="input__family">
+                    <div class="input_group">
+                          <label for="Nom">Adresse de livraison</label>
+                          <span>MIAKO</span>
+                    </div>
+                    <div class="input_group">
+                          <label for="Adresse">Numéro de tel</label>
+                          <span>+225 0103926375</span>
+                    </div>
+                  </div>
+                  <div class="input__family">
+                    <div class="input_group">
+                          <label for="username">Mode de paiement</label>
+                          <span>Wave</span>
+                      </div>
+                    <div class="input_group">
+                          <label for="Email">Whatsapp</label>
+                          <span>+225 0586070612</span>
+                      </div>
+                  </div>
+              </div>            
+          </div>      
+        </div>
+  </section>
+      
+    <!--=============== MAIN JS ===============-->
+    <script src="js/dashboard.js"></script>
+   </body>
+</html>
