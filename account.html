@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>My account</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
+    <!-- Open Sans Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/account.css">
+  </head>
+  <body>
+    <div class="grid-container">
+
+      <!-- Header -->
+      <header class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="header-left">
+          <span class="material-icons-outlined">search</span>
+        </div>
+        <div class="header-right">
+          <span class="material-icons-outlined">notifications</span>
+          <span class="material-icons-outlined">email</span>
+          <span class="material-icons-outlined">account_circle</span>
+        </div>
+      </header>
+      <!-- End Header -->
+
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <span> CALADRIUS </span>
+          </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <a href="#">
+              <span class="material-icons-outlined">dashboard</span> Dashboard
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#">
+              <span class="material-icons-outlined">leaderboard</span> Mes comptes
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#">
+              <span class="material-icons-outlined">phone</span> Support
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#">
+              <span class="material-icons-outlined">email</span> Messages
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#">
+              <span class="material-icons-outlined">poll</span> Rapports
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#">
+              <span class="material-icons-outlined">settings</span> Paramètres
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <!-- End Sidebar -->
+
+      <!-- Main -->
+      <main class="main-container">
+        <div class="main-title">
+          <h2>Mes comptes</h2>
+        </div>
+
+        <!-- Popup Formulaire de dépôt -->
+      <div class="popup" id="popupForm">
+        <div class="popup-content">
+            <span class="close" id="closeOrder"><i class="ri-close-fill"></i></span>
+            <h2><i class="ri-shopping-cart-line"></i>
+                Commander
+            </h2>
+            <form>
+              <div class="input__family">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name">
+              </div>
+              <div class="input__family">
+                <label for="tel">Tel:</label>
+                <input type="text" id="tel" name="phone_number">
+              </div>
+            <div class="input__family">
+              <label for="commune">Commune</label>
+              <select id="commune" name="commune" >
+                  <option value="adjamé">adjamé</option>
+                  <option value="Abobo">Abobo</option>
+                  <option value="Cocody">Cocody</option>
+                  <option value="Koumassi">Koumassi</option>
+                  <option value="Treichville">Treichville</option>
+                  <option value="Marcory">Marcory</option>
+              </select>
+            </div>
+            <div class="input__family">
+                <label for="address">Adresse de Livraison:</label>
+                <input type="text" id="address" name="address">
+            </div>
+            <div class="input__family">
+                <label for="quantity">Quantité</label>
+                <input type="number" id="quantity" name="quantity" min="1" class="quantity">
+            </div>
+            <div class="input__family">
+                <label for="quantity">Montant</label>
+                <input type="number" id="total" name="price" value="0" readonly class="price">
+            </div>
+            <div class="input__family">
+                <label for="payment-method">Mode de Paiement:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="livraison">À la livraison</option>
+                    <option value="wave">Wave</option>
+                </select>
+            </div>
+            <div id="serialNumberDiv" class="input__family">
+              <label for="invoice_number">Facture N°</label>
+              <input type="text" id="serialNumber" name="serial_number_order" value="" readonly >
+            </div>
+            <div class="input__family">
+              <button type="submit" class="btn" id="validate"><i class="ri-shopping-cart-line"></i> Commander</button>
+            </div>
+            </form>
+        </div>
+      </div>
+      <!--==================== POPUP POUR COMMANDE ====================-->
+
+      <!-- Popup Formulaire de retrait -->
+      <div class="popup" id="popupFormreservation">
+        <div class="popup-content">
+            <span class="close" id="closeReservation"><i class="ri-close-fill"></i></span>
+            <h2><i class="ri-calendar-check-line"></i>
+                Reservation
+            </h2>
+            <form method="post">
+              <div class="input__family">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name">
+              </div>
+              <div class="input__family">
+                <label for="tel">Tel:</label>
+                <input type="text" id="tel" name="phone_number">
+              </div>
+            <div class="input__family">
+              <label for="commune">Commune</label>
+              <select id="commune" name="commune" >
+                  <option value="adjamé">adjamé</option>
+                  <option value="Abobo">Abobo</option>
+                  <option value="Cocody">Cocody</option>
+                  <option value="Koumassi">Koumassi</option>
+                  <option value="Treichville">Treichville</option>
+                  <option value="Marcory">Marcory</option>
+              </select>
+            </div>
+            <div class="input__family">
+                <label for="address">Adresse de Livraison:</label>
+                <input type="text" id="address" name="address">
+            </div>
+            <div class="input__family">
+              <label for="Date">Date</label>
+              <input type="date" id="Date" name="date">
+            </div>
+            <div class="input__family">
+                <label for="quantity">Quantité</label>
+                <input type="number" id="quantity" name="quantity" min="1" class="quantity">
+            </div>
+            <div class="input__family">
+                <label for="quantity">Montant</label>
+                <input type="number" id="total" name="price" value="0" readonly class="price">
+            </div>
+            <div class="input__family">
+                <label for="payment-method">Mode de Paiement:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="livraison">À la livraison</option>
+                    <option value="wave">Wave</option>
+                </select>
+            </div>
+                <button type="submit" class="btn" id="validate"><i class="ri-shopping-cart-line"></i> Reserver </button>
+            </form>
+        </div>
+      </div>
+
+        <div class="main-cards">
+
+          <div class="card">
+            <div class="card-inner">
+              <h2>Epargne</h2>
+              </span>
+            </div>
+            <h1>5250 FCFA</h1>
+            <div class="oper_btn">
+                <span class="deposit"><i class="ri-arrow-up-line"></i> Dépôt</span>
+                <span class="withdraw"><i class="ri-arrow-down-line"></i> Retrait</span>
+            </div>           
+          </div>
+
+          <div class="card">
+            <div class="card-inner">
+              <h2>C-BONDS 3 mois</h2>
+            </div>
+            <h1>1250 FCFA</h1>
+            <div class="oper_btn">
+                <span class="deposit"><i class="ri-arrow-up-line"></i> Dépôt</span>
+                <span class="withdraw"><i class="ri-arrow-down-line"></i> Retrait</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-inner">
+              <h2>C-BONDS 6 mois</h2>
+            </div>
+            <h1>3800 FCFA</h1>
+            <div class="oper_btn">
+                <span class="deposit"><i class="ri-arrow-up-line"></i> Dépôt</span>
+                <span class="withdraw"><i class="ri-arrow-down-line"></i> Retrait</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-inner">
+              <h2>C-BONDS 1 an</h2>
+            </div>
+            <h1>1900 FCFA</h1>
+            <div class="oper_btn">
+                <span class="deposit"><i class="ri-arrow-up-line"></i> Dépôt</span>
+                <span class="withdraw"><i class="ri-arrow-down-line"></i> Retrait</span>
+            </div>
+          </div>
+
+        </div>
+    </main>
+    <!-- Scripts -->
+    <!-- Custom JS -->
+    <script src="js/account.js"></script>
+  </body>
+</html>
