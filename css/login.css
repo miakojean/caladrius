@@ -233,70 +233,83 @@ nav {
 }
 
 .about__content{
-    border-radius: 5px;
-    padding: 7px;
+  border-radius: 5px;
+  padding: 7px;
 }
 
 .about__image img {
-  max-width: 450px;
-  margin: auto;
+max-width: 450px;
+margin: auto;
 }
 
 .about__content .paragraph {
-    margin-bottom: 1rem;
-    color: var(--text-light);
-    line-height: 1.5;
-    font-family: 'inter', sans-serif;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  line-height: 1.5;
+  font-family: 'inter', sans-serif;
 }
 
 .about__content .input__content{
-    width: 100%;
-    padding: 10px 0 10px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
+  width: 100%;
+  padding: 10px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.message{
+  padding: 10px;
+  border: 1px solid #a80909;
+  background: #f88787;
+  border-radius: 5px;
+}
+
+.message ul li{
+  font-family: 'inter', sans-serif;
+  text-align: center;
+  list-style: none;
 }
 
 .input__content label{
-    font-size: 18px;
-    color: var(--text-light);
-    padding: 5px;
+  font-size: 18px;
+  color: var(--text-light);
+  padding: 5px;
 }
 
 .input__content input{
-    font-size: 18px;
-    color: var(--prussian-blue);
-    padding: 5px;
-    height: 40px;
-    transition: outline 0.4s ease-out;
+  font-size: 18px;
+  color: var(--prussian-blue);
+  padding: 5px;
+  height: 40px;
+  transition: outline 0.4s ease-out;
 }
 
 .input__content input:focus{
-    outline: 1px solid #006daaff;
-    border: none;
+  outline: 1px solid #006daaff;
+  border: none;
 }
 
 .input__content input.filled{
-    outline: 1px solid #006daaff;
-    border: none
+  outline: 1px solid #006daaff;
+  border: none
 }
 
 .no__account{
-    width: 100%;
-    padding: 10px 0 10px 0;
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
+  width: 100%;
+  padding: 10px 0 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
 }
 
 .no__account p{
-    color: #6b7280;
+  color: #6b7280;
 }
 
 .no__account a{
-    text-decoration: none;
-    color: var(--bice-blue);
+  text-decoration: none;
+  color: var(--bice-blue);
 }
 
 .contact {

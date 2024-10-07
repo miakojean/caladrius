@@ -64,3 +64,14 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+function calculerFrais(){
+    let montant = parseFloat(document.getElementById('montant').value)|| 0;
+    let frais = montant *0.015;
+    let montantNet = montant - frais;
+
+    document.getElementById('frais').value = frais.toFixed(2);
+    document.getElementById('net').value = montantNet.toFixed(2);
+}
+
+document.getElementById('montant').addEventListener('input', calculerFrais);
