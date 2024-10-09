@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root{
     /* CSS HEX */
     --columbia-blue: #b9d6f2ff;
@@ -22,7 +23,7 @@ padding: 0;
 box-sizing: border-box;
 background-color: rgb(247, 246, 252);
 color: rgb(70, 71, 81);
-font-family: 'inter', sans-serif;
+font-family: 'poppins', sans-serif;
 }
 
 .material-icons-outlined {
@@ -33,38 +34,6 @@ font-size: 30px;
 
 .text-secondary {
 color: rgb(70, 71, 81);
-}
-
-.text-blue {
-color: rgb(29, 38, 154);
-}
-
-.background-blue {
-background-color: rgb(29, 38, 154);
-}
-
-.text-red {
-color: rgb(213, 0, 0);
-}
-
-.background-red {
-background-color: rgb(213, 0, 0);
-}
-
-.text-green {
-color: rgb(46, 125, 50);
-}
-
-.background-green {
-background-color: rgb(46, 125, 50);
-}
-
-.text-orange {
-color: rgb(255, 111, 0);
-}
-
-.background-orange {
-background-color: rgb(255, 111, 0);
 }
 
 .grid-container {
@@ -87,6 +56,11 @@ align-items: center;
 justify-content: space-between;
 padding: 0 30px 0 30px;
 box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.header-left h3{
+    color: var(--text-dark);
+    font-weight: 400;
 }
 
 .menu-icon {
