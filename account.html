@@ -1,245 +1,233 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>My account</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
-
-    <!-- Open Sans Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/account.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="/css/account.css" />
+    <title>CALADRIUS | A propos</title>
   </head>
   <body>
-    <div class="grid-container">
-
-      <!-- Header -->
-      <header class="header">
-        <div class="menu-icon" onclick="openSidebar()">
-          <span class="material-icons-outlined">menu</span>
-        </div>
-        <div class="header-left">
-          <span class="material-icons-outlined">search</span>
-        </div>
-        <div class="header-right">
-          <span class="material-icons-outlined">notifications</span>
-          <span class="material-icons-outlined">email</span>
-          <span class="material-icons-outlined">account_circle</span>
-        </div>
-      </header>
-      <!-- End Header -->
-
-      <!-- Sidebar -->
-      <aside id="sidebar">
-        <div class="sidebar-title">
-          <div class="sidebar-brand">
-            <span> CALADRIUS </span>
+    <nav>
+      <div class="nav__logo"><a href="#">CALADRIUS</a></div>
+      <ul class="nav__links" id="nav-links">
+        <li class="link"><a href="index.html">Dashboard</a></li>
+        <li class="link"><a href="#about">Mon compte</a></li>
+        <li class="link"><a href="services.html">Services</a></li>
+        <li class="link"><a href="newsletter.html">Transactions</a></li>
+        <li class="link__log"><a id="login" href="login.html">MIAKO Jean Yves Arnold</a></li>
+        <li class="link__log"><a id ="registration" href="registration.html">Deconnexion</a></li>
+      </ul>
+      <div class="nav__log">
+        <li class="link"><a href="login.html">MIAKO Jean Yves Arnold</a></li>
+        <li class="link"><a href="registration.html">Deconnexion</a></li>
+      </div>
+      <div class="nav__menu__btn" id="menu-btn">
+        <span><i class="ri-menu-3-line"></i></span>
+      </div>
+    </nav>
+    
+    <!-- Modal Dépôt -->
+    <div id="depositModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('depositModal')">&times;</span>
+        <h2>Faire un Dépôt</h2>
+        <form>
+          <div class="input__group">
+            <label for="depositAmount">Montant du Dépôt</label>
+            <input type="number" id="depositAmount" placeholder="Entrer le montant">
           </div>
-          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
-        </div>
+          <div class="input__group">
+            <label for="Fees">Frais</label>
+            <input type="number" id="Fees" readonly>
+          </div>
+          <div class="input__group">
+            <label for="NetDepositAmount">Montant net du dépôt</label>
+            <input type="number" id="NetDepositAmount" readonly>
+          </div>
+          <div class="input__group">
+            <button type="submit">Confirmer Dépôt</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
-        <ul class="sidebar-list">
-          <li class="sidebar-list-item">
-            <a href="#">
-              <span class="material-icons-outlined">dashboard</span> Dashboard
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#">
-              <span class="material-icons-outlined">leaderboard</span> Mes comptes
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#">
-              <span class="material-icons-outlined">phone</span> Support
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#">
-              <span class="material-icons-outlined">email</span> Messages
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#">
-              <span class="material-icons-outlined">poll</span> Rapports
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#">
-              <span class="material-icons-outlined">settings</span> Paramètres
-            </a>
-          </li>
-        </ul>
-      </aside>
-      <!-- End Sidebar -->
+    <!-- Modal Retrait -->
+    <div id="withdrawModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('withdrawModal')">&times;</span>
+        <h2>Faire un Retrait</h2>
+        <form>
+          <form>
+            <div class="input__group">
+              <label for="withdrawAmount">Montant du retrait</label>
+              <input type="number" id="withdrawAmount" placeholder="Entrer le montant">
+            </div>
+            <div class="input__group">
+              <label for="withdrawFees">Frais</label>
+              <input type="number" id="withdrawFees" readonly>
+            </div>
+            <div class="input__group">
+              <label for="NetWithdrawAmount">Montant net du retrait</label>
+              <input type="number" id="NetWithdrawAmount" readonly>
+            </div>
+            <div class="input__group">
+              <button type="submit">Confirmer Retrait</button>
+            </div>
+          </form>
+        </form>
+      </div>
+    </div>
 
-      <!-- Main -->
-      <main class="main-container">
-        <div class="main-title">
-          <h2>Mes comptes</h2>
-        </div>
-
-        <!-- Popup Formulaire de dépôt -->
-      <div class="popup" id="popupForm">
-        <div class="popup-content">
-            <span class="close" id="closeOrder"><i class="ri-close-fill"></i></span>
-            <h2><i class="ri-shopping-cart-line"></i>
-                Commander
-            </h2>
-            <form>
-              <div class="input__family">
-                <label for="name">Nom:</label>
-                <input type="text" id="name" name="name">
+    <section class="section__container about__container" id="about">
+      <div class="about__grid">
+        <div class="about__card">
+            <span><i class="ri-bank-line"></i>
+            </span>
+            <div>
+              <h4>Compte épargne</h4>
+              <p>
+                Votre compte épargne à 7% sans risque.
+              </p>
+              <div class="balance">
+                <p>solde: 10000 FCFA</p>
               </div>
-              <div class="input__family">
-                <label for="tel">Tel:</label>
-                <input type="text" id="tel" name="phone_number">
+              <div class="operation">
+                <button class="operation-btn" onclick="openModal('depositModal')">
+                    <i class="ri-arrow-up-line"></i> Dépôt
+                </button>
+                <button class="operation-btn" onclick="openModal('withdrawModal')">
+                    <i class="ri-arrow-down-line"></i> Retrait
+                </button>
               </div>
-            <div class="input__family">
-              <label for="commune">Commune</label>
-              <select id="commune" name="commune" >
-                  <option value="adjamé">adjamé</option>
-                  <option value="Abobo">Abobo</option>
-                  <option value="Cocody">Cocody</option>
-                  <option value="Koumassi">Koumassi</option>
-                  <option value="Treichville">Treichville</option>
-                  <option value="Marcory">Marcory</option>
-              </select>
             </div>
-            <div class="input__family">
-                <label for="address">Adresse de Livraison:</label>
-                <input type="text" id="address" name="address">
+        </div>
+        <div class="about__card">
+          <span><i class="ri-money-dollar-circle-line"></i>
+          </span>
+          <div>
+            <h4>C-bonds 3 mois</h4>
+            <p>
+              Vos produits financiers à maturité de 3 mois
+            </p>
+            <div class="balance">
+              <p>solde: 0 FCFA</p>
             </div>
-            <div class="input__family">
-                <label for="quantity">Quantité</label>
-                <input type="number" id="quantity" name="quantity" min="1" class="quantity">
+              <div class="operation">
+                <button class="operation-btn" onclick="openModal('depositModal')">
+                  <i class="ri-arrow-up-line"></i> Dépôt
+                </button>
+                <button class="operation-btn" onclick="openModal('withdrawModal')">
+                  <i class="ri-arrow-down-line"></i> Retrait
+                </button>
+              </div>
+          </div>
+        </div>
+        <div class="about__card">
+          <span><i class="ri-bar-chart-line"></i>
+          </span>
+          <div>
+            <h4>C-bonds 6 mois</h4>
+            <p>
+              Vos produits financiers à maturité de 6 mois
+            </p>
+            <div class="balance">
+              <p>solde: 0 FCFA</p>
             </div>
-            <div class="input__family">
-                <label for="quantity">Montant</label>
-                <input type="number" id="total" name="price" value="0" readonly class="price">
+            <div class="operation">
+              <button class="operation-btn" onclick="openModal('depositModal')">
+                <i class="ri-arrow-up-line"></i> Dépôt
+              </button>
+              <button class="operation-btn" onclick="openModal('withdrawModal')">
+                <i class="ri-arrow-down-line"></i> Retrait
+              </button>
             </div>
-            <div class="input__family">
-                <label for="payment-method">Mode de Paiement:</label>
-                <select id="payment-method" name="payment-method" required>
-                    <option value="livraison">À la livraison</option>
-                    <option value="wave">Wave</option>
-                </select>
+          </div>
+        </div>
+        <div class="about__card">
+          <span><i class="ri-line-chart-line"></i>
+          </span>
+          <div>
+            <h4>C-bonds Un an</h4>
+            <p>
+              Vos produits financiers à maturité 1 an.
+            </p>
+            <div class="balance">
+              <p>solde: 0 FCFA</p>
             </div>
-            <div id="serialNumberDiv" class="input__family">
-              <label for="invoice_number">Facture N°</label>
-              <input type="text" id="serialNumber" name="serial_number_order" value="" readonly >
+            <div class="operation">
+              <button class="operation-btn" onclick="openModal('depositModal')">
+                <i class="ri-arrow-up-line"></i> Dépôt
+              </button>
+              <button class="operation-btn" onclick="openModal('withdrawModal')">
+                <i class="ri-arrow-down-line"></i> Retrait
+              </button>
             </div>
-            <div class="input__family">
-              <button type="submit" class="btn" id="validate"><i class="ri-shopping-cart-line"></i> Commander</button>
-            </div>
-            </form>
+          </div>
         </div>
       </div>
-      <!--==================== POPUP POUR COMMANDE ====================-->
+      </div>
+    </section>
 
-      <!-- Popup Formulaire de retrait -->
-      <div class="popup" id="popupFormreservation">
-        <div class="popup-content">
-            <span class="close" id="closeReservation"><i class="ri-close-fill"></i></span>
-            <h2><i class="ri-arrow-down-line"></i>
-                Faire un retrait
-            </h2>
-            <form method="post">
-            <div class="input__family">
-              <label for="tel">Tel:</label>
-              <input type="text" id="tel" name="phone_number">
-            </div>
-            <div class="input__family">
-                <label for="montant">Montant</label>
-                <input type="number" id="montant" name="amount">
-            </div>
-            <div class="input__family">
-                <label for="Frais">Frais</label>
-                <input type="number" id="frais" disabled name="frais">
-            </div>
-            <div class="input__family">
-                <label for="quantity">Retrait net</label>
-                <input type="number" id="net" name="price" disabled class="price">
-            </div>
-            <div class="input__family">
-                <label for="payment-method">Méthode de retrait:</label>
-                <select id="payment-method" name="payment-method" required>
-                    <option value="livraison">Mobile money</option>
-                    <option value="wave">Wave</option>
-                </select>
-            </div>
-            <div class="input__family">
-              <button type="submit" class="btn" id="validate"><i class="ri-arrow-down-line"></i> Retrait </button>
-            </div>
-            </form>
-            <div class="input__family">
-              <span>*Les opérations de retrait sont effectuées dans
-                un délai maximum de 24h
-              </span>
-            </div>
+    <section class="contact" id="contact">
+      <div class="section__container contact__container">
+        <h2 class="section__header">
+          Entrer dans un monde où chaque décision est un pas vers
+          une parfaite gestion financière
+        </h2>
+      </div>
+    </section>
+
+    <footer class="section__container footer__container">
+      <div class="footer__col">
+        <h5><a href="#">CALADRIUS</a></h5>
+      </div>
+      <div class="footer__col">
+        <h4>Nos contact</h4>
+        <p>Rue de l'aménagement, Adjame-paillet, Abidjan</p>
+        <p>+225 0757240274</p>
+        <p>caladriusllc@gmail.com</p>
+      </div>
+      <div class="footer__col">
+        <h4>A propos de nous</h4>
+        <p>
+          Caladrius est une entreprise innovante dédiée
+          à fournir des solutions financières modernes 
+          et accessibles. Nous accompagnons nos clients 
+          avec des services sécurisés et performants pour 
+          optimiser leur épargne, investissement et croissance 
+          économique.
+        </p>
+      </div>
+      <div class="footer__col">
+        <h4>S'abonner à notre newsletter</h4>
+        <form action="/">
+          <input type="text" placeholder="Your Email" />
+          <button><i class="ri-send-plane-2-fill"></i></button>
+        </form>
+        <div class="footer__socials">
+          <h4>Nous suivre</h4>
+          <div>
+            <a href="#"><i class="ri-facebook-box-fill"></i></a>
+            <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+          </div>
         </div>
       </div>
+    </footer>
+    <div class="footer__bar">
+      Copyright © 2023 Web Design Mastery. All rights reserved.
+    </div>
 
-        <div class="main-cards">
-
-          <div class="card">
-            <div class="card-inner">
-              <h2>Epargne</h2>
-              </span>
-            </div>
-            <h1>5250 FCFA</h1>
-            <div class="oper_btn">
-                <span class="deposit"><i class="ri-arrow-up-line"></i> Dépôt</span>
-                <span class="withdraw"><i class="ri-arrow-down-line"></i> Retrait</span>
-            </div>           
-          </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <h2>C-BONDS 3 mois</h2>
-            </div>
-            <h1>1250 FCFA</h1>
-            <div class="oper_btn">
-                <span class="deposit"><i class="ri-arrow-up-line"></i> Dépôt</span>
-                <span class="withdraw"><i class="ri-arrow-down-line"></i> Retrait</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <h2>C-BONDS 6 mois</h2>
-            </div>
-            <h1>3800 FCFA</h1>
-            <div class="oper_btn">
-                <span class="deposit"><i class="ri-arrow-up-line"></i> Dépôt</span>
-                <span class="withdraw"><i class="ri-arrow-down-line"></i> Retrait</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <h2>C-BONDS 1 an</h2>
-            </div>
-            <h1>1900 FCFA</h1>
-            <div class="oper_btn">
-                <span class="deposit"><i class="ri-arrow-up-line"></i> Dépôt</span>
-                <span class="withdraw"><i class="ri-arrow-down-line"></i> Retrait</span>
-            </div>
-          </div>
-
-        </div>
-    </main>
-    <!-- Scripts -->
-    <!-- Custom JS -->
-    <script src="js/account.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="/js/account.js"></script>
   </body>
 </html>

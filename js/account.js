@@ -1,77 +1,79 @@
-// SIDEBAR TOGGLE
+const menuBtn = document.getElementById("menu-btn");
+const navLinks = document.getElementById("nav-links");
+const menuBtnIcon = menuBtn.querySelector("i");
 
-let sidebarOpen = false;
-const sidebar = document.getElementById('sidebar');
+menuBtn.addEventListener("click", (e) => {
+  navLinks.classList.toggle("open");
 
-function openSidebar() {
-  if (!sidebarOpen) {
-    sidebar.classList.add('sidebar-responsive');
-    sidebarOpen = true;
-  }
-}
-
-function closeSidebar() {
-  if (sidebarOpen) {
-    sidebar.classList.remove('sidebar-responsive');
-    sidebarOpen = false;
-  }
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Sélectionne tous les boutons de dépôt et retrait
-    const depositButtons = document.querySelectorAll(".deposit");
-    const withdrawButtons = document.querySelectorAll(".withdraw");
-
-    // Récupère les popups de dépôt et de retrait
-    const popupDeposit = document.getElementById("popupForm");
-    const popupWithdraw = document.getElementById("popupFormreservation");
-
-    // Récupère les boutons de fermeture des popups
-    const closeDeposit = document.getElementById("closeOrder");
-    const closeWithdraw = document.getElementById("closeReservation");
-
-    // Afficher la popup de dépôt lorsqu'on clique sur un bouton dépôt
-    depositButtons.forEach(button => {
-        button.addEventListener("click", function() {
-            popupDeposit.style.display = "block";
-        });
-    });
-
-    // Afficher la popup de retrait lorsqu'on clique sur un bouton retrait
-    withdrawButtons.forEach(button => {
-        button.addEventListener("click", function() {
-            popupWithdraw.style.display = "block";
-        });
-    });
-
-    // Fermer la popup de dépôt
-    closeDeposit.addEventListener("click", function() {
-        popupDeposit.style.display = "none";
-    });
-
-    // Fermer la popup de retrait
-    closeWithdraw.addEventListener("click", function() {
-        popupWithdraw.style.display = "none";
-    });
-
-    // Fermer les popups si on clique en dehors du contenu
-    window.addEventListener("click", function(event) {
-        if (event.target == popupDeposit) {
-            popupDeposit.style.display = "none";
-        }
-        if (event.target == popupWithdraw) {
-            popupWithdraw.style.display = "none";
-        }
-    });
+  const isOpen = navLinks.classList.contains("open");
+  menuBtnIcon.setAttribute(
+    "class",
+    isOpen ? "ri-close-line" : "ri-menu-3-line"
+  );
 });
 
-function calculerFrais(){
-    let montant = parseFloat(document.getElementById('montant').value)|| 0;
-    let frais = montant *0.015;
-    let montantNet = montant - frais;
+navLinks.addEventListener("click", (e) => {
+  navLinks.classList.remove("open");
+  menuBtnIcon.setAttribute("class", "ri-menu-3-line");
+});
 
-    document.getElementById('frais').value = frais.toFixed(2);
-    document.getElementById('net').value = montantNet.toFixed(2);
+// Fonction pour ouvrir la modal
+function openModal(modalId) {
+  document.getElementById(modalId).style.display = "block";
 }
 
-document.getElementById('montant').addEventListener('input', calculerFrais);
+// Fonction pour fermer la modal
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = "none";
+}
+
+// Fermer la modal en cliquant à l'extérieur
+window.onclick = function(event) {
+  const depositModal = document.getElementById('depositModal');
+  const withdrawModal = document.getElementById('withdrawModal');
+  if (event.target === depositModal) {
+    depositModal.style.display = "none";
+  } else if (event.target === withdrawModal) {
+    withdrawModal.style.display = "none";
+  }
+};
+
+function calculateAmount() {
+  // Récupérer les valeurs des éléments pour le dépôt
+  const depositAmount = document.getElementById("depositAmount").value;
+  const feesField = document.getElementById("Fees");
+  const netAmountField = document.getElementById("NetDepositAmount");
+
+  // Récupérer les valeurs des éléments pour le retrait
+  const withdrawAmount = document.getElementById("withdrawAmount").value;
+  const withFees = document.getElementById("withdrawFees");
+  const NetwithdrawAmount = document.getElementById("NetWithdrawAmount");
+
+  // Calcul pour le dépôt
+  if (depositAmount && depositAmount > 0) {
+    const fees = depositAmount * 0.01;
+    const netAmount = depositAmount - fees;
+    
+    feesField.value = fees.toFixed(2);  // Format avec 2 décimales
+    netAmountField.value = netAmount.toFixed(2);
+  } else {
+    feesField.value = "";
+    netAmountField.value = "";
+  }
+
+  // Calcul pour le retrait
+  if (withdrawAmount && withdrawAmount > 0) {
+    const Fees = withdrawAmount * 0.01;
+    const netCash = withdrawAmount - Fees;
+    
+    withFees.value = Fees.toFixed(2);
+    NetwithdrawAmount.value = netCash.toFixed(2);  // Mettre à jour la valeur correcte
+  } else {
+    withFees.value = "";
+    NetwithdrawAmount.value = "";
+  }
+}
+
+// Ajouter un événement pour recalculer à chaque saisie
+document.getElementById("depositAmount").addEventListener("input", calculateAmount);
+document.getElementById("withdrawAmount").addEventListener("input", calculateAmount);

@@ -13,12 +13,12 @@
 }
 
 :root{
-    /* CSS HEX */
-    --columbia-blue: #b9d6f2ff;
-    --oxford-blue: #061a40ff;
-    --sapphire: #0353a4ff;
-    --bice-blue: #006daaff;
-    --prussian-blue: #003559ff;
+  /* CSS HEX */
+  --columbia-blue: #b9d6f2ff;
+  --oxford-blue: #061a40ff;
+  --sapphire: #0353a4ff;
+  --bice-blue: #006daaff;
+  --prussian-blue: #003559ff;
 }
 
 * {
@@ -591,11 +591,11 @@ nav {
     align-items: center;
   }
 
-  .contact__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left;
+.contact__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
   }
 
   .footer__container {
