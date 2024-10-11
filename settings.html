@@ -16,22 +16,22 @@
   </head>
   <body>
     <nav>
-        <div class="nav__logo"><a href="#">CALADRIUS</a></div>
-        <ul class="nav__links" id="nav-links">
+      <div class="nav__logo"><a href="#">CALADRIUS</a></div>
+      <ul class="nav__links" id="nav-links">
         <li class="link"><a href="index.html">Dashboard</a></li>
         <li class="link"><a href="#about">Mon compte</a></li>
         <li class="link"><a href="services.html">Services</a></li>
         <li class="link"><a href="newsletter.html">Transactions</a></li>
         <li class="link__log"><a id="login" href="login.html">MIAKO Jean Yves Arnold</a></li>
         <li class="link__log"><a id ="registration" href="registration.html">Deconnexion</a></li>
-        </ul>
-        <div class="nav__log">
+      </ul>
+      <div class="nav__log">
         <li class="link"><a href="login.html">MIAKO Jean Yves Arnold</a></li>
         <li class="link"><a href="registration.html">Deconnexion</a></li>
-        </div>
-        <div class="nav__menu__btn" id="menu-btn">
+      </div>
+      <div class="nav__menu__btn" id="menu-btn">
         <span><i class="ri-menu-3-line"></i></span>
-        </div>
+      </div>
     </nav>
 
     <section class="section__container about__container" id="about">
@@ -43,25 +43,26 @@
               <div class="input__family">
                   <div class="input__content">
                       <label for="username">Nom</label>
-                      <input class="myInput" type="text" name="first_name" id="firstname">
+                      <input class="myInput_perso" type="text" name="first_name" id="firstname" value="Miako" readonly>
                   </div>
                   <div class="input__content">
                       <label for="username">Prenoms</label>
-                      <input class="myInput" type="text" name="last_name" id="lastname">
+                      <input class="myInput_perso" type="text" name="last_name" id="lastname" value="Jean Yves" readonly>
                   </div>
               </div>
               <div class="input__family">
                   <div class="input__content">
                       <label for="username">Nom d'utilisateur</label>
-                      <input class="myInput" type="text" name="username" id="username">
+                      <input class="myInput_perso" type="text" name="username" id="username" value="John" readonly>
                   </div>
                   <div class="input__content">
                       <label for="username">Email</label>
-                      <input class="myInput" type="email" name="email" id="email">
+                      <input class="myInput_perso" type="email" name="email" id="email" value="miakojeanyves@gmail.com" readonly>
                   </div>
               </div>
               <div class="input__family">
-                  <button type="submit" class="btn" id="order_1">Modifier</button>
+                  <button type="button" class="btn" id="editButton">Modifier</button>
+                  <button type="submit" class="btn" id="saveButton" style="display: none;"> Sauvegarder </button>
               </div>
             </form>
         </div>
@@ -72,25 +73,26 @@
             <div class="input__family">
                 <div class="input__content">
                     <label for="username">Date de naissance</label>
-                    <input class="myInput" type="text" name="first_name" id="firstname">
+                    <input class="myInput_sup" type="datetime" name="birthday" id="birthday" readonly>
                 </div>
                 <div class="input__content">
-                    <label for="username">Adresse complète</label>
-                    <input class="myInput" type="text" name="last_name" id="lastname">
+                    <label for="adresse">Adresse complète</label>
+                    <input class="myInput_sup" type="text" name="adresse" id="adresse" readonly>
                 </div>
             </div>
             <div class="input__family">
                 <div class="input__content">
-                    <label for="username">Numéro de téléphone</label>
-                    <input class="myInput" type="text" name="username" id="username">
+                    <label for="phone_number">Numéro de téléphone</label>
+                    <input class="myInput_sup" type="text" name="phone_number" id="phone_number" readonly>
                 </div>
                 <div class="input__content">
-                    <label for="username">Adresse email secondaire</label>
-                    <input class="myInput" type="email" name="email" id="email">
+                    <label for="second_email">Adresse email secondaire</label>
+                    <input class="myInput_sup" type="email" name="second_email" id="second_email" readonly>
                 </div>
             </div>
             <div class="input__family">
-                <button type="submit" class="btn" id="order_1">Modifier</button>
+                <button type="button" class="btn" id="info__sup">Modifier</button>
+                <button type="submit" class="btn" id="saveinfo__sup" style="display: none;"> Sauvegarder </button>
             </div>
           </form>
         </div>
@@ -105,22 +107,23 @@
               <form action="#" method="post">
                 <div class="input__family">
                     <div class="input__content">
-                        <label for="username">Activité professionnelle</label>
-                        <input class="myInput" type="text" name="first_name" id="firstname">
+                        <label for="professional_activity">Activité professionnelle</label>
+                        <input class="myInput_fin" type="text" name="professional_activity" id="professional_activity" readonly>
                     </div>
                     <div class="input__content">
-                        <label for="username">Mode de communication</label>
-                        <input class="myInput" type="text" name="last_name" id="lastname">
+                        <label for="communication_method">Mode de communication</label>
+                        <input class="myInput_fin" type="text" name="communication_method" id="communication_method" readonly>
                     </div>
                 </div>
                 <div class="input__family">
                     <div class="input__content">
-                        <label for="username">Méthode de paiement</label>
-                        <input class="myInput" type="text" name="username" id="username">
+                        <label for="paiement_method">Méthode de paiement</label>
+                        <input class="myInput_fin" type="text" name="paiement_method" id="paiement_method" readonly>
                     </div>
                 </div>
                 <div class="input__family">
-                    <button type="submit" class="btn" id="order_1">Modifier</button>
+                <button type="button" class="btn" id="fin">Modifier</button>
+                <button type="submit" class="btn" id="saveinfo__fin" style="display: none;"> Sauvegarder </button>
                 </div>
               </form>
           </div>
@@ -130,22 +133,23 @@
             <form action="#" method="post">
               <div class="input__family">
                   <div class="input__content">
-                      <label for="username">N° de compte</label>
-                      <input class="myInput" type="text" name="first_name" id="firstname">
+                      <label for="account_number">N° de compte</label>
+                      <input class="myInput_finsup" type="text" name="account_number" id="account_number" readonly>
                   </div>
                   <div class="input__content">
-                      <label for="username">Microfinance</label>
-                      <input class="myInput" type="text" name="last_name" id="lastname">
+                      <label for="microfinance">Microfinance</label>
+                      <input class="myInput_finsup" type="text" name="microfinance" id="microfinance" readonly>
                   </div>
               </div>
               <div class="input__family">
                   <div class="input__content">
-                      <label for="username">Méthode de paiement</label>
-                      <input class="myInput" type="text" name="username" id="username">
+                      <label for="username">Revenu annuel</label>
+                      <input class="myInput_finsup" type="text" name="username" id="username" readonly>
                   </div>
               </div>
               <div class="input__family">
-                <button type="submit" class="btn" id="order_1">Modifier</button>
+                <button type="button" class="btn" id="fin_sup">Modifier</button>
+                <button type="submit" class="btn" id="saveinfo__finsup" style="display: none;"> Sauvegarder </button>
               </div>
             </form>
           </div>
@@ -207,6 +211,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="/js/about.js"></script>
+    <script src="/js/settings.js"></script>
   </body>
 </html>
