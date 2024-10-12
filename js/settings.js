@@ -32,6 +32,14 @@ function enableEditing(inputClass, editButtonId, saveButtonId) {
   document.getElementById(saveButtonId).style.display = 'inline-block';
 }
 
+// Fonction pour activer les champs select désactivés
+function enableSelects(inputClass) {
+  const selects = document.querySelectorAll(inputClass);
+  selects.forEach(select => {
+    select.removeAttribute('disabled');
+  });
+}
+
 // Utilisation de la fonction pour chaque section
 document.getElementById('editButton').addEventListener('click', function() {
   enableEditing('.myInput_perso', 'editButton', 'saveButton');
@@ -43,6 +51,7 @@ document.getElementById('info__sup').addEventListener('click', function() {
 
 document.getElementById('fin').addEventListener('click', function() {
   enableEditing('.myInput_fin', 'fin', 'saveinfo__fin');
+  enableSelects('.myInput_fin'); // Activer les selects en même temps que les inputs
 });
 
 document.getElementById('fin_sup').addEventListener('click', function() {

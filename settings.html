@@ -18,15 +18,15 @@
     <nav>
       <div class="nav__logo"><a href="#">CALADRIUS</a></div>
       <ul class="nav__links" id="nav-links">
-        <li class="link"><a href="index.html">Dashboard</a></li>
-        <li class="link"><a href="#about">Mon compte</a></li>
+        <li class="link"><a href="espace.html">Dashboard</a></li>
+        <li class="link"><a href="account.html">Mon compte</a></li>
         <li class="link"><a href="services.html">Services</a></li>
-        <li class="link"><a href="newsletter.html">Transactions</a></li>
-        <li class="link__log"><a id="login" href="login.html">MIAKO Jean Yves Arnold</a></li>
+        <li class="link"><a href="">Transactions</a></li>
+        <li class="link__log"><a id="login" href="settings.html">MIAKO Jean Yves Arnold</a></li>
         <li class="link__log"><a id ="registration" href="registration.html">Deconnexion</a></li>
       </ul>
       <div class="nav__log">
-        <li class="link"><a href="login.html">MIAKO Jean Yves Arnold</a></li>
+        <li class="link"><a href="settings.html">MIAKO Jean Yves Arnold</a></li>
         <li class="link"><a href="registration.html">Deconnexion</a></li>
       </div>
       <div class="nav__menu__btn" id="menu-btn">
@@ -111,14 +111,22 @@
                         <input class="myInput_fin" type="text" name="professional_activity" id="professional_activity" readonly>
                     </div>
                     <div class="input__content">
-                        <label for="communication_method">Mode de communication</label>
-                        <input class="myInput_fin" type="text" name="communication_method" id="communication_method" readonly>
-                    </div>
+                      <label for="communication_method">Mode de communication</label>
+                      <select class="myInput_fin" name="communication_method" id="communication_method" disabled>
+                          <option value="email">Email</option>
+                          <option value="phone">Téléphone</option>
+                          <option value="sms">SMS</option>
+                      </select>
+                  </div>
                 </div>
                 <div class="input__family">
                     <div class="input__content">
                         <label for="paiement_method">Méthode de paiement</label>
-                        <input class="myInput_fin" type="text" name="paiement_method" id="paiement_method" readonly>
+                        <select class="myInput_fin" name="paiement_method" id="paiement_method" disabled>
+                          <option value="Carte bancaire">Carte bancaire</option>
+                          <option value="Wave">Wave</option>
+                          <option value="Mobile money">Mobile money</option>
+                        </select>
                     </div>
                 </div>
                 <div class="input__family">
@@ -160,7 +168,7 @@
       <div class="section__container contact__container">
         <h2 class="section__header">
           Entrer dans un monde où chaque décision est un pas vers
-          une parfaite gestion financière
+          une parfaite gestion financière.
         </h2>
         <div class="contact__btn">
           <button class="btn" id="order_2">S'inscrire</button>
