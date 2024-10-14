@@ -17,43 +17,49 @@ navLinks.addEventListener("click", (e) => {
   menuBtnIcon.setAttribute("class", "ri-menu-3-line");
 });
 
-function enableEditing(inputClass, editButtonId, saveButtonId) {
-  // Récupérer tous les champs de saisie
+// Fonction pour activer les champs d'input et select
+function enableEditing(inputClass, editButtonId, saveButtonId, selectClass = null) {
+  // Récupérer tous les champs d'input
   const inputs = document.querySelectorAll(inputClass);
-  
-  // Parcourir tous les inputs pour enlever readonly et ajouter une bordure
+
+  // Activer les inputs et ajouter une bordure ou un style distinctif
   inputs.forEach(input => {
-      input.removeAttribute('readonly');
-      input.classList.add('editable'); // Ajouter la classe pour la bordure
+    input.removeAttribute('readonly');
+    input.classList.add('editable');  // Utilisez une classe CSS pour styliser les champs activés
   });
-  
-  // Cacher le bouton Modifier et afficher le bouton Sauvegarder
+
+  // Si un selectClass est spécifié, activer également les selects
+  if (selectClass) {
+    const selects = document.querySelectorAll(selectClass);
+    selects.forEach(select => {
+      select.removeAttribute('disabled');
+      select.classList.add('editable');  // Ajouter un style pour distinguer les champs activés
+    });
+  }
+
+  // Masquer le bouton "Modifier" et afficher le bouton "Sauvegarder"
   document.getElementById(editButtonId).style.display = 'none';
   document.getElementById(saveButtonId).style.display = 'inline-block';
 }
 
-// Fonction pour activer les champs select désactivés
-function enableSelects(inputClass) {
-  const selects = document.querySelectorAll(inputClass);
-  selects.forEach(select => {
-    select.removeAttribute('disabled');
-  });
-}
-
-// Utilisation de la fonction pour chaque section
-document.getElementById('editButton').addEventListener('click', function() {
+// Ajout d'écouteurs pour chaque section
+document.getElementById('editButton').addEventListener('click', function(event) {
+  event.preventDefault();  // Empêche le rechargement de la page
   enableEditing('.myInput_perso', 'editButton', 'saveButton');
 });
 
-document.getElementById('info__sup').addEventListener('click', function() {
+document.getElementById('info__sup').addEventListener('click', function(event) {
+  event.preventDefault();
   enableEditing('.myInput_sup', 'info__sup', 'saveinfo__sup');
 });
 
-document.getElementById('fin').addEventListener('click', function() {
-  enableEditing('.myInput_fin', 'fin', 'saveinfo__fin');
-  enableSelects('.myInput_fin'); // Activer les selects en même temps que les inputs
+document.getElementById('fin').addEventListener('click', function(event) {
+  event.preventDefault();
+  enableEditing('.myInput_fin', 'fin', 'saveinfo__fin', '.myInput_fin');  // Inclut les selects
 });
 
-document.getElementById('fin_sup').addEventListener('click', function() {
+document.getElementById('fin_sup').addEventListener('click', function(event) {
+  event.preventDefault();
   enableEditing('.myInput_finsup', 'fin_sup', 'saveinfo__finsup');
 });
+
