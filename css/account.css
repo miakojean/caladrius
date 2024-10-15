@@ -387,7 +387,7 @@ nav {
   margin-bottom: 5px;
 }
 
-.input__group input {
+.input__group input, select {
   margin-bottom: 15px;
   padding: 10px;
   font-size: 16px;
@@ -396,7 +396,7 @@ nav {
   font-family: 'inter', sans-serif;
 }
 
-.input__group input:focus{
+.input__group input:focus, select:focus{
   outline: none;
 }
 
