@@ -49,6 +49,7 @@ function calculateAmount() {
   const withFees = document.getElementById("withdrawFees");
   const NetwithdrawAmount = document.getElementById("NetWithdrawAmount");
 
+
   // Calcul pour le dépôt
   if (depositAmount && depositAmount > 0) {
     const fees = depositAmount * 0.01;
@@ -77,3 +78,21 @@ function calculateAmount() {
 // Ajouter un événement pour recalculer à chaque saisie
 document.getElementById("depositAmount").addEventListener("input", calculateAmount);
 document.getElementById("withdrawAmount").addEventListener("input", calculateAmount);
+
+function openModal(modalId, accountType) {
+  const modal = document.getElementById(modalId);
+  modal.style.display = "block";  // Ouvrir la modal
+
+  // Choisir le bon select en fonction du modal ouvert
+  let selectElement;
+  if (modalId === 'depositModal') {
+    selectElement = document.getElementById("depositAccountType");
+  } else if (modalId === 'withdrawModal') {
+    selectElement = document.getElementById("withdrawAccountType");
+  }
+
+  // Si un type de compte est fourni, le sélectionner dans le dropdown
+  if (selectElement && accountType) {
+    selectElement.value = accountType;
+  }
+}

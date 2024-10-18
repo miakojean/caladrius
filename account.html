@@ -53,12 +53,20 @@
             <input type="number" id="NetDepositAmount" readonly>
           </div>
           <div class="input__group">
-            <label for="AccountType">Type de compte</label>
-            <select name="AccountType" id="AccountType">
+            <label for="PaiementMethod">Methode de paiement</label>
+            <select name="PaiementMethod" id="PaiementMethod">
+              <option value="Carte de crédit">Carte de crédit</option>
+              <option value="Wave">Wave</option>
+              <option value="Mobile Money">Mobile money</option>
+            </select>
+          </div>
+          <div class="input__group">
+            <label for="depositAccountType">Type de compte</label>
+            <select name="AccountType" id="depositAccountType">
               <option value="Epargne">Epargne</option>
-              <option value="Epargne">C-bonds 3 mois</option>
-              <option value="Epargne">C-bonds 6 mois</option>
-              <option value="Epargne">C-bonds 1 an</option>
+              <option value="C-bonds 3 mois">C-bonds 3 mois</option>
+              <option value="C-bonds 6 mois">C-bonds 6 mois</option>
+              <option value="C-bonds 1 an">C-bonds 1 an</option>
             </select>
           </div>
           <div class="input__group">
@@ -88,12 +96,20 @@
               <input type="number" id="NetWithdrawAmount" readonly>
             </div>
             <div class="input__group">
-              <label for="AccountType">Type de compte</label>
-              <select name="AccountType" id="AccountType">
+              <label for="PaiementMethod">Methode de paiement</label>
+              <select name="PaiementMethod" id="PaiementMethod">
+                <option value="Carte de crédit">Carte de crédit</option>
+                <option value="Wave">Wave</option>
+                <option value="Mobile Money">Mobile money</option>
+              </select>
+            </div>
+            <div class="input__group">
+              <label for="withdrawAccountType">Type de compte</label>
+              <select name="AccountType" id="withdrawAccountType">
                 <option value="Epargne">Epargne</option>
-                <option value="Epargne">C-bonds 3 mois</option>
-                <option value="Epargne">C-bonds 6 mois</option>
-                <option value="Epargne">C-bonds 1 an</option>
+                <option value="C-bonds 3 mois">C-bonds 3 mois</option>
+                <option value="C-bonds 6 mois">C-bonds 6 mois</option>
+                <option value="C-bonds 1 an">C-bonds 1 an</option>
               </select>
             </div>
             <div class="input__group">
@@ -107,26 +123,23 @@
     <section class="section__container about__container" id="about">
       <div class="about__grid">
         <div class="about__card">
-            <span><i class="ri-bank-line"></i>
-            </span>
-            <div>
+          <span><i class="ri-bank-line"></i></span>
+          <div>
               <h4>Compte épargne</h4>
-              <p>
-                Votre compte épargne à 7% sans risque.
-              </p>
+              <p>Votre compte épargne à 7% sans risque.</p>
               <div class="balance">
-                <p>solde: 10000 FCFA</p>
+                  <p>Solde : 10000 FCFA</p>
               </div>
               <div class="operation">
-                <button class="operation-btn" onclick="openModal('depositModal')">
-                    <i class="ri-arrow-up-line"></i> Dépôt
-                </button>
-                <button class="operation-btn" onclick="openModal('withdrawModal')">
-                    <i class="ri-arrow-down-line"></i> Retrait
-                </button>
+                  <button class="operation-btn" data-account="Epargne" onclick="openModal('depositModal', 'Epargne')">
+                      <i class="ri-arrow-up-line"></i> Dépôt
+                  </button>
+                  <button class="operation-btn" data-account="Epargne" onclick="openModal('withdrawModal', 'Epargne')">
+                      <i class="ri-arrow-down-line"></i> Retrait
+                  </button>
               </div>
-            </div>
-        </div>
+          </div>
+      </div>
         <div class="about__card">
           <span><i class="ri-money-dollar-circle-line"></i>
           </span>
@@ -138,14 +151,14 @@
             <div class="balance">
               <p>solde: 0 FCFA</p>
             </div>
-              <div class="operation">
-                <button class="operation-btn" onclick="openModal('depositModal')">
-                  <i class="ri-arrow-up-line"></i> Dépôt
-                </button>
-                <button class="operation-btn" onclick="openModal('withdrawModal')">
-                  <i class="ri-arrow-down-line"></i> Retrait
-                </button>
-              </div>
+            <div class="operation">
+              <button class="operation-btn" data-account="C-bonds 3 mois" onclick="openModal('depositModal', 'C-bonds 3 mois')">
+                <i class="ri-arrow-up-line"></i> Dépôt
+              </button>
+              <button class="operation-btn" data-account="C-bonds 3 mois" onclick="openModal('withdrawModal', 'C-bonds 3 mois')">
+                <i class="ri-arrow-down-line"></i> Retrait
+              </button>
+            </div>
           </div>
         </div>
         <div class="about__card">
@@ -160,10 +173,10 @@
               <p>solde: 0 FCFA</p>
             </div>
             <div class="operation">
-              <button class="operation-btn" onclick="openModal('depositModal')">
+              <button class="operation-btn" data-account="C-bonds 6 mois" onclick="openModal('depositModal', 'C-bonds 6 mois')">
                 <i class="ri-arrow-up-line"></i> Dépôt
               </button>
-              <button class="operation-btn" onclick="openModal('withdrawModal')">
+              <button class="operation-btn" data-account="C-bonds 6 mois" onclick="openModal('withdrawModal', 'C-bonds 6 mois')">
                 <i class="ri-arrow-down-line"></i> Retrait
               </button>
             </div>
@@ -181,13 +194,13 @@
               <p>solde: 0 FCFA</p>
             </div>
             <div class="operation">
-              <button class="operation-btn" onclick="openModal('depositModal')">
+              <button class="operation-btn" data-account="C-bonds 1 an" onclick="openModal('depositModal', 'C-bonds 1 an')">
                 <i class="ri-arrow-up-line"></i> Dépôt
               </button>
-              <button class="operation-btn" onclick="openModal('withdrawModal')">
+              <button class="operation-btn" data-account="C-bonds 1 an" onclick="openModal('withdrawModal', 'C-bonds 1 an')">
                 <i class="ri-arrow-down-line"></i> Retrait
               </button>
-            </div>
+            </div>            
           </div>
         </div>
       </div>
