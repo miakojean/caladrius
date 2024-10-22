@@ -34,16 +34,4 @@ function checkInput(event) {
         inputField.classList.remove("filled");
     }
 }
-
-document.getElementById('form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Empêche le rechargement de la page
-    const messageContainer = document.querySelector('.message');
-    messageContainer.innerHTML = '<p>Souscription réussie, vérifiez dès à présent votre boite mail.</p>';
-    
-    // Affiche la div une fois le message ajouté
-    messageContainer.style.display = 'block';
-  
-    // Optionnel : reset le formulaire
-    this.reset();
-  });
   

@@ -56,10 +56,11 @@
   font-family: 'roboto', sans-serif;
   color: var(--white);
   background-color: var(--bice-blue);
-  border-radius: 2px;
+  border-radius: 10px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: 0.3s;
+  width: 100%;
 }
 
 .btn:hover {
@@ -267,31 +268,34 @@ nav {
 }
 
 .about__content .input__content{
-    width: 100%;
-    padding: 10px 0 10px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+  padding: 10px 0 10px 0;
+  width: 100%;
 }
 
 .input__content label{
     font-size: 18px;
-    color: var(--text-light);
+    color: var(--sapphire);
     padding: 5px;
 }
 
 .input__content input{
-    font-size: 18px;
-    color: var(--prussian-blue);
-    padding: 5px;
-    height: 40px;
-    transition: outline 0.4s ease-out;
+  font-size: 18px;
+  color: var(--prussian-blue);
+  padding: 5px;
+  height: 40px;
+  transition: outline 0.4s ease-out;
+  border-radius: 10px;
+  border: 1px solid #181a8f;
+  width: 100%;
 }
 
 .input__content input:focus{
-    outline: 1px solid #006daaff;
-    border: none;
+  outline: 1px solid #006daaff;
+  border: none;
 }
 
 .input__content input.filled{
