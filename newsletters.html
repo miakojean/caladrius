@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="/css/newsletters.css" />
+    <title>CALADRIUS BANK</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo"><a href="#">CALADRIUS</a></div>
+      <ul class="nav__links" id="nav-links">
+        <li class="link"><a href="#home">Accueil</a></li>
+        <li class="link"><a href="about.html">A propos</a></li>
+        <li class="link"><a href="newsletter.html">newsletter</a></li>
+        <li class="link__log"><a id="login" href="login.html">Blog</a></li>
+      </ul>
+      <div class="nav__log">
+        <li class="link"><a href="login.html">Blog</a></li>
+      </div>
+      <div class="nav__menu__btn" id="menu-btn">
+        <span><i class="ri-menu-3-line"></i></span>
+      </div>
+    </nav>
+    <header class="section__container header__container" id="home">
+      <div class="header__content">
+        <h1>Institution financière en ligne</h1>
+        <div class="header__content__details">
+          <p>
+            Caladrius est une entreprise dédiée à fournir des solutions 
+            innovantes et accessibles dans le domaine des services financiers 
+            numériques. Inspirés par la modernité et la simplicité, nous créons 
+            des expériences bancaires en ligne qui allient efficacité, sécurité
+            et convivialité.</p>
+          <button class="btn"><a href="#form">Abonnement Newsletter</a></button>
+        </div>
+      </div>
+    </header>
+
+    <section class="section__container about__container" id="about">
+        <div class="about__header">
+          <div class="about__image">
+            <img src="/assets/DALL·E 2024-10-01 21.24.34 - An African economics professor and researcher in a professional setting. He is wearing a well-fitted suit with glasses, standing confidently by a whit.webp" class="fade-in" alt="about" />
+          </div>
+          <div class="about__content">
+            <p class="section__subheader">
+                Rester au courant des grandes tendances financières
+                et de nos travaux.
+            </p>
+            <h2 class="section__header">Abonnement newsletter</h2>
+            <div class="message" id="successMessage">
+                <p>Souscription réussie, vérifiez dès à présent votre boite mail.</p>
+            </div>
+            <!-- Message d'erreur si les champs ne sont pas remplis correctement -->
+            <div class="error" id="errorMessage">
+                <p>Veuillez remplir correctement les champs.</p>
+            </div>  
+            <form action="{% url 'subscribe' %}" method="post" id="form">
+              <div class="input__content">
+                  <label for="username">Prenoms</label>
+                  <input class="myInput" type="text" name="name" id="name">
+              </div>
+              <div class="input__content">
+                  <label for="username">Email</label>
+                  <input class="myInput" type="email" name="email" id="email" >
+              </div>
+              <div class="input__content">
+                  <button type="submit" class="btn" id="order_1">S'abonner</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section__container contact__container">
+        <h2 class="section__header">
+          Entrer dans un monde où chaque décision est un pas vers
+          une parfaite gestion financière
+        </h2>
+        <div class="contact__btn">
+            <button class="btn" id="order_2">Souscrire</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="section__container footer__container">
+      <div class="footer__col">
+        <h5><a href="#">CALADRIUS</a></h5>
+      </div>
+      <div class="footer__col">
+        <h4>Nos contact</h4>
+        <p>Rue de l'aménagement, Adjame-paillet, Abidjan</p>
+        <p>+225 0586070612</p>
+        <p>caladriusllc@gmail.com</p>
+      </div>
+      <div class="footer__col">
+        <h4>A propos de nous</h4>
+        <p>
+          Caladrius est une entreprise innovante dédiée
+          à fournir des solutions financières modernes 
+          et accessibles. Nous accompagnons nos clients 
+          avec des services sécurisés et performants pour 
+          optimiser leur épargne, investissement et croissance 
+          économique.
+        </p>
+      </div>
+      <div class="footer__col">
+        <h4>S'abonner à notre newsletter</h4>
+        <form action="/">
+          <input type="text" placeholder="Your Email" />
+          <button><i class="ri-send-plane-2-fill"></i></button>
+        </form>
+        <div class="footer__socials">
+          <h4>Nous suivre</h4>
+          <div>
+            <a href="#"><i class="ri-facebook-box-fill"></i></a>
+            <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="footer__bar">
+      Copyright © 2023 Web Design Mastery. All rights reserved.
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="/js/newsletters.js"></script>
+  </body>
+</html>
