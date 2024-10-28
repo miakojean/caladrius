@@ -13,12 +13,12 @@
 }
 
 :root{
-    /* CSS HEX */
-    --columbia-blue: #b9d6f2ff;
-    --oxford-blue: #061a40ff;
-    --sapphire: #0353a4ff;
-    --bice-blue: #006daaff;
-    --prussian-blue: #003559ff;
+  /* CSS HEX */
+  --columbia-blue: #b9d6f2ff;
+  --oxford-blue: #061a40ff;
+  --sapphire: #0353a4ff;
+  --bice-blue: #006daaff;
+  --prussian-blue: #003559ff;
 }
 
 * {
@@ -68,8 +68,8 @@
 }
 
 .btn a{
-    text-decoration: none;
-    color: var(--white);
+  text-decoration: none;
+  color: var(--white);
 }
 
 .btn__link {
@@ -216,18 +216,18 @@ nav {
 
 .message{
   display: none;
-  border: 1px solid #1e7425;
+  border: 1px solid #388a3e;
   padding: 10px;
   background: #75e77f;
   border-radius: 5px;
 }
 
 .error{
-    display: none;
-    border: 1px solid #4d0505;
-    padding: 10px;
-    background: #e77575;
-    border-radius: 5px;
+  display: none;
+  border: 1px solid #4d0505;
+  padding: 10px;
+  background: #e77575;
+  border-radius: 5px;
 }
 
 .message p{
@@ -322,25 +322,8 @@ img.fade-in{
 }
 
 .input__content input.filled{
-    outline: 1px solid #006daaff;
-    border: none
-}
-
-.no__account{
-    width: 100%;
-    padding: 10px 0 10px 0;
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-}
-
-.no__account p{
-    color: #6b7280;
-}
-
-.no__account a{
-    text-decoration: none;
-    color: var(--bice-blue);
+  outline: 1px solid #006daaff;
+  border: none
 }
 
 .contact {
