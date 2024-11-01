@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CALADRIUS | Newsletter souscription</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="/gui/css/login.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav__logo"><a href="#"></a></div>
+  </nav>
+
+  <section class="section__container about__container" id="about">
+    <div class="container">
+      <div class="logo">
+        <h2>CALADRIUS</h2>
+        <p>Bienvenu(e) chez nous, ci-dessous le formulaire de souscription.</p>
+      </div>
+      <div class="success">
+        <p>inscription réussie, consultez votre boite mail pour confirmer l'inscription</p>
+      </div>
+      <div class="echec">
+        <p>Prenom ou email déjà enregistré.</p>
+      </div>
+      <form action="#" method="post">
+        <div class="input__family">
+          <label for="name">Prenom</label>
+          <div class="input_icon">
+            <i class="ri-user-line"></i> <!-- ou ri-user-fill pour une icône pleine -->
+            <input type="text" name="name" id="name " placeholder="Entrer votre nom">
+          </div>
+          <span>* Entrer un nom d'utilisateur valide</span>
+        </div>
+        <div class="input__family">
+          <label for="email">Email</label>
+          <div class="input_icon">
+            <i class="ri-mail-line"></i> <!-- ou ri-mail-fill pour une icône pleine -->
+            <input type="email" name="name" id="email" placeholder="Entrer votre email">
+          </div>
+          <span>* Entrer une email valide</span>
+        </div>
+        <div class="input__family">
+          <button type="submit" class="btn">S'inscrire</button>
+        </div>
+      </form>
+      <div class="politics">
+        <p>Politique de confidentialité</p>
+        <p>Conditions d'utilisations</p>
+      </div>
+    </div>
+  </section>
+  <script src="/gui/js/login.js"></script>
+</body>
+</html>
